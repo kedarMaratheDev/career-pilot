@@ -1,15 +1,17 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { authService } from "../services/authService";
+import { firebaseAuthService } from "../services/firebaseAuthService";
+import { SignupModal } from "./SignupModal";
 import "./LoginPage.css";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("candidate@pilot.dev");
-  const [password, setPassword] = useState("12345678");
+  const [email, setEmail] = useState("johndoe@gmail.com");
+  const [password, setPassword] = useState("123456");
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -17,7 +19,7 @@ export const LoginPage = () => {
     setIsSubmitting(true);
 
     try {
-      await authService.login(email, password);
+      await firebaseAuthService.login(email, password);
       navigate("/dashboard");
     } catch (submitError) {
       setError(
@@ -78,7 +80,27 @@ export const LoginPage = () => {
             {isSubmitting ? "Signing in..." : "Login"}
           </button>
         </form>
+
+        <div className="login-card__divider">
+          <span>Don't have an account?</span>
+        </div>
+
+        <button
+          type="button"
+          className="login-card__signup-button"
+          onClick={() => setIsSignupModalOpen(true)}
+        >
+          Create Account
+        </button>
       </section>
+
+      <SignupModal
+        isOpen={isSignupModalOpen}
+        onClose={() => setIsSignupModalOpen(false)}
+        onSignupSuccess={() => {
+          navigate("/dashboard");
+        }}
+      />
     </div>
   );
 };

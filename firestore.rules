@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check authentication
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to check if user owns the resource
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Users collection - users can only access their own documents
+    match /users/{uid} {
+      allow read: if isAuthenticated() && isOwner(uid);
+      allow write: if isAuthenticated() && isOwner(uid);
+      allow create: if isAuthenticated() && isOwner(uid);
+      allow delete: if isAuthenticated() && isOwner(uid);
+    }
+
+    // Jobs collection - users can access only their own jobs
+    match /jobs/{jobId} {
+      // Allow reading jobs that belong to the current user
+      allow read: if isAuthenticated() && 
+                     isOwner(resource.data.userId);
+      
+      // Allow updating jobs that belong to the current user
+      allow update: if isAuthenticated() && 
+                       isOwner(resource.data.userId);
+      
+      // Allow creating jobs if the userId in the document matches current user
+      allow create: if isAuthenticated() && 
+                       isOwner(request.resource.data.userId);
+      
+      // Allow deleting jobs that belong to the current user
+      allow delete: if isAuthenticated() && 
+                       isOwner(resource.data.userId);
+    }
+
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

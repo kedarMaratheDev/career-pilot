@@ -7,7 +7,11 @@ It helps candidates manage opportunities from discovery to final outcome using a
 
 **[View the live app on Vercel](https://career-pilot-sand.vercel.app/)**
 
-**Note:** Authentication is stubbed for demonstration purposes. This is a demo version to showcase the job tracking functionality.
+### Demo Credentials (Auto-filled for Easy Testing)
+- **Email:** johndoe@gmail.com
+- **Password:** 123456
+
+Or create a new account directly from the login page.
 
 ## What The App Does
 
@@ -41,36 +45,44 @@ Career Pilot gives users a focused workspace to:
 
 ## Tech Stack
 
-- React
+- React 19
 - TypeScript
 - Vite
 - React Router
-
-Future backend target:
-
 - Firebase Authentication
-- Firestore
+- Cloud Firestore
 
 ## Architecture Overview
 
-The app is organized by feature and responsibilities to keep it scalable and backend-ready.
+The app is organized by feature and responsibilities following clean architecture principles.
 
-- UI components focus on rendering and user interactions
-- business operations are routed through a service layer
-- domain types are centralized for strong TypeScript contracts
-- mock/local data can be replaced later with Firebase without rewriting UI flows
+- **UI Layer:** Components focus on rendering and user interactions
+- **Service Layer:** All operations routed through Firebase services (authentication and Firestore)
+- **Data Layer:** Cloud Firestore for persistent storage
+- **Type Safety:** Strong TypeScript contracts for all data models
+
+### Backend Features
+
+- **Firebase Authentication:** Email/password signup and login with secure session management
+- **Cloud Firestore:** Real-time database for jobs and user data
+- **Security Rules:** Row-level security ensuring users can only access their own data
 
 ### Service Layer
 
-Job operations are abstracted in `jobService`:
+Job operations are abstracted in `firebaseJobService`:
 
-- list jobs
-- create jobs
+- list jobs by user
+- filter jobs by status
 - lookup by id
-- update status/details/notes
-- delete jobs
+- create/update/delete jobs
+- update notes and status in real-time
 
-This design allows swapping the mock store with Firestore APIs later.
+Authentication is handled by `firebaseAuthService`:
+
+- signup with email and password
+- login/logout
+- session management
+- auth state listeners
 
 ## Folder Structure
 
