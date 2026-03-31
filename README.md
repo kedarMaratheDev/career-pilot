@@ -3,9 +3,16 @@
 Career Pilot is a modern job tracking application built with React and TypeScript.
 It helps candidates manage opportunities from discovery to final outcome using a clean kanban-style dashboard.
 
+## Live Demo
+
+**[View the live app on Vercel](https://career-pilot-sand.vercel.app/)**
+
+**Note:** Authentication is stubbed for demonstration purposes. This is a demo version to showcase the job tracking functionality.
+
 ## What The App Does
 
 Career Pilot gives users a focused workspace to:
+
 - track opportunities by status lane
 - capture job-specific notes and links
 - update stage/verdict quickly through modal interactions
@@ -40,6 +47,7 @@ Career Pilot gives users a focused workspace to:
 - React Router
 
 Future backend target:
+
 - Firebase Authentication
 - Firestore
 
@@ -55,6 +63,7 @@ The app is organized by feature and responsibilities to keep it scalable and bac
 ### Service Layer
 
 Job operations are abstracted in `jobService`:
+
 - list jobs
 - create jobs
 - lookup by id
@@ -150,6 +159,7 @@ npm run lint
 ## Screenshots
 
 Add screenshots here:
+
 - Login page
 - Dashboard with filters
 - Add Job page
