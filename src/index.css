@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --font-body: 'Outfit', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-heading: 'Space Grotesk', 'Outfit', 'Avenir Next', sans-serif;
+  --text-primary: #16233b;
+  --text-muted: #556681;
+  --surface: #ffffff;
+  --surface-alt: #f4f8ff;
+  --border: #d6e2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+p {
+  margin: 0;
+}

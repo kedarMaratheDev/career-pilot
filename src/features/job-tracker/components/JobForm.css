@@ -1,0 +1,88 @@
+.job-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.job-form__grid {
+    display: grid;
+    gap: 0.95rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.job-form label {
+    display: grid;
+    gap: 0.4rem;
+    color: #2e3f5e;
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+.job-form__full {
+    grid-column: 1 / -1;
+}
+
+.job-form input,
+.job-form select,
+.job-form textarea {
+    border: 1px solid #cdd9eb;
+    border-radius: 0.7rem;
+    padding: 0.68rem 0.75rem;
+    font: inherit;
+    color: #172845;
+    background: #ffffff;
+}
+
+.job-form textarea {
+    resize: vertical;
+    min-height: 7rem;
+}
+
+.job-form input:focus-visible,
+.job-form select:focus-visible,
+.job-form textarea:focus-visible {
+    border-color: #3359c5;
+    box-shadow: 0 0 0 3px rgba(51, 89, 197, 0.17);
+    outline: none;
+}
+
+.job-form__error {
+    color: #b1273d;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.job-form__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+}
+
+.job-form__actions button {
+    border: none;
+    border-radius: 0.68rem;
+    padding: 0.65rem 0.95rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.job-form__actions button[type='submit'] {
+    background: linear-gradient(135deg, #2243bb, #0f8298);
+    color: #eef3ff;
+}
+
+.job-form__actions button[type='submit']:disabled {
+    cursor: not-allowed;
+    opacity: 0.62;
+}
+
+.job-form__ghost {
+    background: #eef3fb;
+    color: #2f4161;
+}
+
+@media (max-width: 860px) {
+    .job-form__grid {
+        grid-template-columns: 1fr;
+    }
+}

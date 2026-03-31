@@ -1,0 +1,133 @@
+.job-card {
+    border: 1px solid #dde6ef;
+    border-radius: 0.9rem;
+    background: #ffffff;
+    padding: 0.95rem;
+    display: grid;
+    gap: 0.7rem;
+    box-shadow: 0 8px 18px rgba(20, 41, 89, 0.06);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(20, 41, 89, 0.1);
+}
+
+.job-card:focus-visible {
+    outline: 2px solid #3359c5;
+    outline-offset: 2px;
+}
+
+.job-card__header {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.job-card__company {
+    margin: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: #5a6983;
+}
+
+.job-card__role {
+    margin: 0;
+    color: #16213a;
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+.job-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: #5b6981;
+    font-size: 0.82rem;
+}
+
+.job-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.job-card__badge {
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.6rem;
+}
+
+.job-card__badge--stage {
+    color: #0d5e80;
+    background: #dff2fa;
+}
+
+.job-card__badge--selected {
+    color: #0e6a44;
+    background: #ddf5ea;
+}
+
+.job-card__badge--rejected {
+    color: #8a2730;
+    background: #f8dfe3;
+}
+
+.job-card__notes {
+    margin: 0;
+    color: #3f4f68;
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.job-card__notes-field {
+    display: grid;
+    gap: 0.35rem;
+    color: #2f4160;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.job-card__notes-field textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 4.2rem;
+    border: 1px solid #cfdbeb;
+    border-radius: 0.65rem;
+    padding: 0.55rem 0.62rem;
+    font: inherit;
+    font-size: 0.82rem;
+    color: #172845;
+    background: #fbfdff;
+}
+
+.job-card__notes-field textarea:focus-visible {
+    outline: none;
+    border-color: #3359c5;
+    box-shadow: 0 0 0 3px rgba(51, 89, 197, 0.16);
+}
+
+.job-card__saving {
+    margin: 0;
+    color: #496082;
+    font-size: 0.77rem;
+}
+
+.job-card__link {
+    justify-self: flex-start;
+    color: #1f4ccf;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.job-card__link:hover {
+    text-decoration: underline;
+}

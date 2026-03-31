@@ -1,0 +1,118 @@
+.dashboard-page {
+    display: grid;
+    gap: 1rem;
+}
+
+.dashboard-page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dashboard-page__add-button {
+    border: none;
+    border-radius: 0.68rem;
+    padding: 0.65rem 0.95rem;
+    font: inherit;
+    font-weight: 700;
+    color: #eef3ff;
+    background: linear-gradient(135deg, #2243bb, #0f8298);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.dashboard-page__add-button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.dashboard-page__eyebrow {
+    margin: 0;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #3a5fc6;
+    font-weight: 700;
+}
+
+.dashboard-page__header h1 {
+    margin: 0.6rem 0 0;
+    font-size: clamp(1.15rem, 2.8vw, 1.9rem);
+    letter-spacing: -0.02em;
+    color: #12203a;
+    max-width: 42rem;
+}
+
+.dashboard-page__loading {
+    border: 1px solid #d6e2f2;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.72);
+    padding: 2rem;
+    color: #4d5f7b;
+}
+
+.dashboard-page__filters {
+    border: 1px solid #d8e3f1;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.8rem;
+    display: grid;
+    gap: 0.7rem;
+    grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr));
+}
+
+.dashboard-page__filters label {
+    display: grid;
+    gap: 0.35rem;
+    color: #2e3f5e;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.dashboard-page__filters input,
+.dashboard-page__filters select {
+    border: 1px solid #cdd9eb;
+    border-radius: 0.65rem;
+    padding: 0.56rem 0.65rem;
+    font: inherit;
+    color: #172845;
+    background: #ffffff;
+}
+
+.dashboard-page__filters input:focus-visible,
+.dashboard-page__filters select:focus-visible {
+    border-color: #3359c5;
+    box-shadow: 0 0 0 3px rgba(51, 89, 197, 0.17);
+    outline: none;
+}
+
+.dashboard-page__board {
+    display: grid;
+    gap: 0.95rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-page__board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .dashboard-page__header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-page__board {
+        grid-template-columns: 1fr;
+        overflow-x: auto;
+    }
+
+    .dashboard-page__filters {
+        grid-template-columns: 1fr;
+    }
+}

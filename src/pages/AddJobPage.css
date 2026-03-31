@@ -1,0 +1,60 @@
+.add-job-page {
+    display: grid;
+    gap: 1rem;
+    max-width: 64rem;
+}
+
+.add-job-page__header {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.add-job-page__eyebrow {
+    margin: 0;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #3a5fc6;
+    font-weight: 700;
+}
+
+.add-job-page__header h1 {
+    margin: 0;
+    font-size: clamp(1.25rem, 2.8vw, 2rem);
+    letter-spacing: -0.02em;
+    color: #12203a;
+}
+
+.add-job-page__header p {
+    margin: 0;
+    color: #4b5b75;
+    max-width: 42rem;
+    line-height: 1.55;
+}
+
+.add-job-page__panel {
+    border: 1px solid #d8e3f1;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 14px 30px rgba(16, 34, 68, 0.09);
+    padding: clamp(0.95rem, 2.5vw, 1.4rem);
+}
+
+.add-job-page__loading {
+    border: 1px solid #d8e3f1;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.86);
+    padding: 1rem;
+    color: #4b5b75;
+}
+
+.add-job-page__back {
+    border: none;
+    border-radius: 0.68rem;
+    padding: 0.65rem 0.95rem;
+    font: inherit;
+    font-weight: 700;
+    color: #eef3ff;
+    background: linear-gradient(135deg, #2243bb, #0f8298);
+    cursor: pointer;
+}

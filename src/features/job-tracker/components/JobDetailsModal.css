@@ -1,0 +1,103 @@
+.job-details-modal {
+    display: grid;
+    gap: 1rem;
+}
+
+.job-details-modal__meta {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0.85rem;
+    border: 1px solid #d9e5f4;
+    border-radius: 0.85rem;
+    background: #f8fbff;
+}
+
+.job-details-modal__meta p {
+    margin: 0;
+    color: #3f516f;
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.job-details-modal__meta a {
+    color: #1f4ccf;
+}
+
+.job-details-modal__notes {
+    line-height: 1.55;
+}
+
+
+.job-details-modal__form {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.job-details-modal__form label {
+    display: grid;
+    gap: 0.42rem;
+    color: #2e3f5f;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.job-details-modal__form select {
+    border: 1px solid #cdd9eb;
+    border-radius: 0.7rem;
+    padding: 0.62rem 0.72rem;
+    font: inherit;
+    background: #ffffff;
+    color: #172845;
+}
+
+.job-details-modal__form select:focus-visible {
+    border-color: #2f57c8;
+    box-shadow: 0 0 0 3px rgba(47, 87, 200, 0.18);
+    outline: none;
+}
+
+.job-details-modal__error {
+    margin: 0;
+    color: #b1273d;
+    font-size: 0.82rem;
+}
+
+.job-details-modal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    margin-top: 0.35rem;
+}
+
+.job-details-modal__actions button {
+    border: none;
+    border-radius: 0.65rem;
+    padding: 0.58rem 0.85rem;
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.job-details-modal__actions button[type='submit'] {
+    color: #eef3ff;
+    background: linear-gradient(135deg, #2243bb, #0f8298);
+}
+
+.job-details-modal__ghost {
+    color: #304261;
+    background: #eef3fb;
+}
+
+.job-details-modal__danger {
+    color: #ffffff;
+    background: linear-gradient(135deg, #a92736, #8a2330);
+}
+
+.job-details-modal__danger:hover {
+    filter: brightness(1.05);
+}
+
+.job-details-modal__actions button:disabled {
+    cursor: not-allowed;
+    opacity: 0.72;
+}
